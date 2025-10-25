@@ -3,25 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Redirecting...</title>
+    <title>Redirecting…</title>
     <script>
-      // Telegram channel
+      // ✅ Your Telegram channel link
       const telegramChannel = "https://t.me/sharechatagentloot";
 
-      // Prevent caching so GitHub Pages always loads the latest script
-      if (window.performance && performance.navigation.type === 1) {
-        console.log("Reload detected, redirecting fresh...");
-      }
-
-      // Delay 100ms just to ensure DOM load
-      window.addEventListener("DOMContentLoaded", () => {
+      // ✅ Use href instead of replace for GitHub Pages compatibility
+      window.onload = function () {
+        // Short delay so GitHub loads fully before redirect
         setTimeout(() => {
-          window.location.replace(telegramChannel + "?r=" + Date.now());
+          window.location.href = telegramChannel + "?r=" + Date.now();
         }, 100);
-      });
+      };
     </script>
   </head>
   <body>
     <p>Redirecting to Telegram…</p>
   </body>
-</html>
+  </html>
